@@ -1,11 +1,11 @@
 /* Ogólne style */
 :root {
-  --primary-color: #007bff;
-  --secondary-color: #0056b3;
-  --background-color: #f4f4f9;
-  --text-color: #333;
-  --white: #ffffff;
-  --black: #000000;
+  --primary-color: #89CFF0; /* Pastelowy niebieski */
+  --secondary-color: #77DD77; /* Pastelowa zieleń */
+  --background-color: #FDFD96; /* Pastelowy żółty */
+  --text-color: #333333; /* Ciemnoszary dla tekstu */
+  --white: #FFFFFF; /* Biały */
+  --black: #000000; /* Czarny */
   --font-family: 'Arial', sans-serif;
   --font-size-base: 16px;
   --spacing-unit: 8px;
@@ -54,9 +54,10 @@ nav a:hover {
   padding: calc(var(--spacing-unit) * 1.5);
   width: 100%;
   max-width: 400px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--primary-color);
   border-radius: 5px;
   font-size: 1rem;
+  background-color: var(--white);
 }
 
 /* Lista miast */
@@ -129,6 +130,7 @@ nav a:hover {
 .weather-card h3 {
   margin-top: 0;
   font-size: 1.5rem;
+  color: var(--primary-color);
 }
 
 .weather-card p {
@@ -139,6 +141,7 @@ nav a:hover {
 /* Ikony */
 .icon {
   margin-right: calc(var(--spacing-unit) * 1);
+  color: var(--primary-color);
 }
 
 /* Responsywność */

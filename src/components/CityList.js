@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { addFavorite, removeFavorite } from '../features/favoriteCitiesSlice';
+import { saveToLocalStorage, getFromLocalStorage, isLocalStorageAvailable } from '../utils/localStorageUtils';
 
 const cities = [
   'Warszawa', 'Kraków', 'Łódź', 'Wrocław', 'Poznań',
@@ -30,6 +31,9 @@ const CityList = () => {
       dispatch(removeFavorite(city));
     } else {
       dispatch(addFavorite(city));
+    }
+    if (isLocalStorageAvailable()) {
+      saveToLocalStorage('favoriteCities', favorites);
     }
   };
 

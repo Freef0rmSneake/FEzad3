@@ -17,7 +17,7 @@ export const useWeather = (city) => {
       setCurrentWeather(current);
       setForecast(forecastData);
     } catch (err) {
-      setError(err.message);
+      setError('Nie udało się pobrać danych pogodowych. Spróbuj ponownie później.');
     } finally {
       setLoading(false);
     }
