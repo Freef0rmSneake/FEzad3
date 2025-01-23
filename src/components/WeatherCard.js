@@ -19,23 +19,23 @@ const WeatherCard = ({ title, temperature, weather, wind, humidity, clouds }) =>
     <div className="weather-card">
       <h3>{title}</h3>
       <p>
-        <FontAwesomeIcon icon={faThermometerHalf} className="icon" />
+        <FontAwesomeIcon icon={faThermometerHalf} className="icon" aria-hidden="true" />
         Temperatura: {convertedTemp}
       </p>
       <p>
-        <FontAwesomeIcon icon={faCloud} className="icon" />
+        <FontAwesomeIcon icon={faCloud} className="icon" aria-hidden="true" />
         Warunki: <WeatherIcon code={weather} />
       </p>
       <p>
-        <FontAwesomeIcon icon={faWind} className="icon" />
+        <FontAwesomeIcon icon={faWind} className="icon" aria-hidden="true" />
         Wiatr: {wind.speed} m/s, kierunek: {wind.deg}°
       </p>
       <p>
-        <FontAwesomeIcon icon={faTint} className="icon" />
+        <FontAwesomeIcon icon={faTint} className="icon" aria-hidden="true" />
         Wilgotność: {humidity}%
       </p>
       <p>
-        <FontAwesomeIcon icon={faCloud} className="icon" />
+        <FontAwesomeIcon icon={faCloud} className="icon" aria-hidden="true" />
         Zachmurzenie: {clouds}%
       </p>
     </div>

@@ -1,29 +1,44 @@
 /* Ogólne style */
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #0056b3;
+  --background-color: #f4f4f9;
+  --text-color: #333;
+  --white: #ffffff;
+  --black: #000000;
+  --font-family: 'Arial', sans-serif;
+  --font-size-base: 16px;
+  --spacing-unit: 8px;
+}
+
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: var(--font-family);
   margin: 0;
   padding: 0;
-  background-color: #f4f4f9;
-  color: #333;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
 }
 
 .App {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: calc(var(--spacing-unit) * 3);
   text-align: center;
 }
 
 /* Nawigacja */
 nav {
-  margin-bottom: 20px;
+  margin-bottom: calc(var(--spacing-unit) * 3);
 }
 
 nav a {
   text-decoration: none;
-  color: #007bff;
+  color: var(--primary-color);
   font-weight: bold;
-  margin: 0 10px;
+  margin: 0 calc(var(--spacing-unit) * 2);
+  font-size: 1.1rem;
 }
 
 nav a:hover {
@@ -32,14 +47,16 @@ nav a:hover {
 
 /* Formularz wyszukiwania */
 .search-container {
-  margin-bottom: 20px;
+  margin-bottom: calc(var(--spacing-unit) * 3);
 }
 
 .search-container input[type="text"] {
-  padding: 10px;
-  width: 300px;
+  padding: calc(var(--spacing-unit) * 1.5);
+  width: 100%;
+  max-width: 400px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  font-size: 1rem;
 }
 
 /* Lista miast */
@@ -57,9 +74,9 @@ nav a:hover {
 }
 
 .city-list li {
-  background-color: #fff;
-  margin: 10px 0;
-  padding: 15px;
+  background-color: var(--white);
+  margin: var(--spacing-unit) 0;
+  padding: calc(var(--spacing-unit) * 2);
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -68,21 +85,22 @@ nav a:hover {
 }
 
 .city-list button {
-  background-color: #007bff;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: var(--white);
   border: none;
-  padding: 8px 12px;
+  padding: calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 2);
   border-radius: 5px;
   cursor: pointer;
+  font-size: 1rem;
 }
 
 .city-list button:hover {
-  background-color: #0056b3;
+  background-color: var(--secondary-color);
 }
 
 /* Ulubione miasta */
 .favorites-list {
-  margin-top: 20px;
+  margin-top: calc(var(--spacing-unit) * 3);
 }
 
 .favorites-list ul {
@@ -91,40 +109,42 @@ nav a:hover {
 }
 
 .favorites-list li {
-  background-color: #fff;
-  margin: 10px 0;
-  padding: 15px;
+  background-color: var(--white);
+  margin: var(--spacing-unit) 0;
+  padding: calc(var(--spacing-unit) * 2);
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Karta pogodowa */
 .weather-card {
-  background-color: #fff;
-  padding: 20px;
+  background-color: var(--white);
+  padding: calc(var(--spacing-unit) * 3);
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 20px 0;
+  margin: calc(var(--spacing-unit) * 3) 0;
   text-align: left;
 }
 
 .weather-card h3 {
   margin-top: 0;
+  font-size: 1.5rem;
 }
 
 .weather-card p {
-  margin: 10px 0;
+  margin: calc(var(--spacing-unit) * 1.5) 0;
+  font-size: 1.1rem;
 }
 
 /* Ikony */
 .icon {
-  margin-right: 10px;
+  margin-right: calc(var(--spacing-unit) * 1);
 }
 
 /* Responsywność */
 @media (max-width: 768px) {
-  .search-container input[type="text"] {
-    width: 100%;
+  .App {
+    padding: calc(var(--spacing-unit) * 2);
   }
 
   .city-list li {
@@ -133,7 +153,19 @@ nav a:hover {
   }
 
   .city-list button {
-    margin-top: 10px;
+    margin-top: var(--spacing-unit);
     width: 100%;
   }
+}
+
+/* Dostępność */
+button:focus,
+input:focus,
+a:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.weather-card img {
+  alt: "Ikona pogody";
 }
