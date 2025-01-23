@@ -1,19 +1,16 @@
-import React, { useCallback } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const cities = ['Warszawa', 'Kraków', 'Łódź', 'Wrocław', 'Poznań'];
 
-const CityList = ({ onSelectCity }) => {
-  const handleClick = useCallback((city) => {
-    onSelectCity(city);
-  }, [onSelectCity]);
-
+const CityList = () => {
   return (
     <div>
       <h2>Wybierz miasto:</h2>
       <ul>
         {cities.map((city) => (
           <li key={city}>
-            <button onClick={() => handleClick(city)}>{city}</button>
+            <Link to={`/city/${city}`}>{city}</Link>
           </li>
         ))}
       </ul>

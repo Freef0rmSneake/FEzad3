@@ -1,16 +1,23 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
+import { useWeather } from '../hooks/useWeather';
 import WeatherCard from './WeatherCard';
 
-const WeatherDetails = ({ weather }) => {
-  if (!weather) return null;
+const WeatherDetails = () => {
+  const { cityName } = useParams();
+  const { currentWeather, loading, error } = useWeather(cityName);
+
+  if (loading) return <p>Ładowanie...</p>;
+  if (error) return <p>{error}</p>;
+  if (!currentWeather) return null;
 
   return (
     <WeatherCard
-      title={weather.name}
-      temperature={weather.main.temp}
-      weather={weather.weather[0].icon}
-      wind={weather.wind}
-      humidity={weather.main.humidity}
+      title={currentWeather.name}
+      temperature={currentWeather.main.temp}
+      weather={currentWeather.weather[0].icon}
+      wind={currentWeather.wind}
+      humidity={currentWeather.main.humidity}
     />
   );
 };
