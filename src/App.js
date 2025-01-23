@@ -10,10 +10,13 @@ function App() {
     <Router>
       <div className="App">
         <h1>Pogoda w Polsce</h1>
+        {/* Nawigacja - proste linki do głównej strony */}
         <nav>
           <Link to="/">Strona główna</Link>
         </nav>
+        {/* Komponent do wyboru jednostek temperatury */}
         <TemperatureUnitSelector />
+        {/* Definicja tras - główna strona i szczegóły pogody dla miasta */}
         <Routes>
           <Route path="/" element={<CityList />} />
           <Route path="/city/:cityName" element={<WeatherDetails />} />
