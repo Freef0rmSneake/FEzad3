@@ -1,11 +1,11 @@
 /* Ogólne style */
 :root {
-  --primary-color: #89CFF0; /* Pastelowy niebieski */
-  --secondary-color: #77DD77; /* Pastelowa zieleń */
-  --background-color: #FDFD96; /* Pastelowy żółty */
-  --text-color: #333333; /* Ciemnoszary dla tekstu */
-  --white: #FFFFFF; /* Biały */
-  --black: #000000; /* Czarny */
+  --primary-color: #89CFF0;
+  --secondary-color: #77DD77;
+  --background-color: #FDFD96;
+  --text-color: #333333;
+  --white: #FFFFFF;
+  --black: #000000;
   --font-family: 'Arial', sans-serif;
   --font-size-base: 16px;
   --spacing-unit: 8px;
